@@ -5,7 +5,6 @@ import {
   VictoryAxis,
   VictoryTooltip,
   VictoryGroup,
-  VictoryLabel,
   VictoryLine,
 } from "victory";
 
@@ -42,17 +41,6 @@ function Chart(props) {
     ? students.filter((element) => element.name === props.studentName)
     : students;
 
-  const projects = [
-    "W1D3 - Project - Guess-the-number",
-    "W1D4 - Project - Kleurentoggle",
-    "W1D5 - Project - Galgje",
-    "W2D5 - Project - Filmzoeker",
-    "W3D5 - Project - Todo-List",
-    "W4D3 - Project - Next-Level CSS",
-    "W5D5 - Project - Lil_Playlist",
-    "W6D2 - Project - Eindopdracht",
-  ];
-
   const studentRatingsWithLabels = studentRatings.map((element) => ({
     assignment: element.assignment,
     difficultyRating: element.difficultyRating,
@@ -76,10 +64,6 @@ function Chart(props) {
 
   const avgDifficultyRating = arrAvg(allDifficultyRatings);
   const avgEnjoymentRating = arrAvg(allEnjoymentRatings);
-
-  const projectRatings = studentRatings.filter((element) =>
-    projects.includes(element.assignment)
-  );
 
   const gemTheme = {
     axis: {
